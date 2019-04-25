@@ -1,0 +1,33 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Lending Club loan prediction project.
+
+```{r}
+# Clear the environment 
+rm(list=ls())
+
+library(DescTools)
+library(dplyr)
+library(ggplot2)
+library(aod)
+library(ROCR)
+library(pROC)
+library(Deducer)
+library(dplyr)
+library(readxl)
+library(caret)
+library(MASS)
+```
+
+```{r}
+loan <- read.csv(file="C:/Users/Owner/Desktop/BitTiger/loan.csv", stringsAsFactors = FALSE)
+loan_data <- loan
+loan_data <- loan_data[,c("grade","sub_grade","term","loan_amnt","issue_d","loan_status","emp_length",
+                          "home_ownership", "annual_inc","verification_status","purpose","dti",
+                          "delinq_2yrs","addr_state","int_rate", "inq_last_6mths","mths_since_last_delinq",
+                          "mths_since_last_record","open_acc","pub_rec","revol_bal","revol_util","total_acc")]
+
+```
